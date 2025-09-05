@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elena Moreau | Photographer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#hero" class="text-2xl font-bold font-serif text-white">
+                    Elena Moreau
+                </a>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="text-gray-300 hover:text-white nav-link active">Home</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-white nav-link">Portfolio</a>
+                    <a href="#about" class="text-gray-300 hover:text-white nav-link">About</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white nav-link">Contact</a>
+                </div>
+
+                <!-- Mobile Nav Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90">
+            <a href="#hero" class="block py-3 px-6 text-sm text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
+            <a href="#portfolio" class="block py-3 px-6 text-sm text-gray-300 hover:text-white hover:bg-gray-800">Portfolio</a>
+            <a href="#about" class="block py-3 px-6 text-sm text-gray-300 hover:text-white hover:bg-gray-800">About</a>
+            <a href="#contact" class="block py-3 px-6 text-sm text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="text-center p-4">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif mb-4 leading-tight fade-in">Stories Through A Lens</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-300 fade-in" style="transition-delay: 200ms;">Specializing in portrait, landscape, and event photography.</p>
+            <a href="#portfolio" class="px-8 py-3 rounded-full font-semibold border-2 border-white hover:bg-white hover:text-black transition-colors duration-300 fade-in" style="transition-delay: 400ms;">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl lg:text-5xl font-serif mb-4 text-white">Portfolio</h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">A curated selection of my favorite shots. Click on any image to see a larger version.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div id="filter-buttons" class="flex justify-center flex-wrap gap-2 md:gap-4 mb-12 fade-in">
+                    <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" data-filter="portraits">Portraits</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" data-filter="landscapes">Landscapes</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" data-filter="weddings">Weddings</button>
+                </div>
+                
+                <!-- Gallery Grid -->
+                <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    <div class="gallery-item group relative overflow-hidden rounded-lg cursor-pointer fade-in" data-category="portraits">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Portrait 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="gallery-item-hover-effect"><i data-lucide="zoom-in" class="h-8 w-8"></i></div>
+                    </div>
+                    <div class="gallery-item group relative overflow-hidden rounded-lg cursor-pointer fade-in" data-category="landscapes">
+                        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Landscape 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="gallery-item-hover-effect"><i data-lucide="zoom-in" class="h-8 w-8"></i></div>
+                    </div>
+                    <div class="gallery-item group relative overflow-hidden rounded-lg cursor-pointer fade-in" data-category="weddings">
+                        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Wedding 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="gallery-item-hover-effect"><i data-lucide="zoom-in" class="h-8 w-8"></i></div>
+                    </div>
+                    <div class="gallery-item group relative overflow-hidden rounded-lg cursor-pointer fade-in" data-category="portraits">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Portrait 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="gallery-item-hover-effect"><i data-lucide="zoom-in" class="h-8 w-8"></i></div>
+                    </div>
+                    <div class="gallery-item group relative overflow-hidden rounded-lg cursor-pointer fade-in" data-category="landscapes">
+                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2175&q=80" alt="Landscape 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="gallery-item-hover-effect"><i data-lucide="zoom-in" class="h-8 w-8"></i></div>
+                    </div>
+                     <div class="gallery-item group relative overflow-hidden rounded-lg cursor-pointer fade-in" data-category="weddings">
+                        <img src="https://images.unsplash.com/photo-1597861405022-18153f4a2157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Wedding 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="gallery-item-hover-effect"><i data-lucide="zoom-in" class="h-8 w-8"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 lg:py-32 bg-[#191919]">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-2 fade-in">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80" alt="Photographer Elena Moreau" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+                    </div>
+                    <div class="md:col-span-3 fade-in">
+                        <h2 class="text-4xl lg:text-5xl font-serif mb-6 text-white">About Me</h2>
+                        <p class="mb-4 text-gray-300">My name is Elena Moreau, and I'm a photographer based in Paris. For me, photography isn't just about taking pictures; it's about freezing a moment in time, capturing the raw emotion, and telling a story that words cannot.</p>
+                        <p class="text-gray-300">With over a decade of experience, I've honed my craft to find the extraordinary in the ordinary. Whether it's the intimate glance between a newly married couple or the majestic silence of a mountain peak at dawn, I strive to create images that are both timeless and evocative.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-4xl lg:text-5xl font-serif mb-4 text-white fade-in">Let's Create Together</h2>
+                    <p class="max-w-xl mx-auto mb-12 text-gray-400 fade-in">Have a project in mind or want to book a session? I'd love to hear from you.</p>
+                </div>
+                <div class="max-w-xl mx-auto fade-in">
+                     <form id="contact-form" action="#" method="POST" class="space-y-6">
+                         <div>
+                             <input type="text" placeholder="Your Name" class="w-full bg-gray-800 border border-gray-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                         </div>
+                         <div>
+                             <input type="email" placeholder="Your Email" class="w-full bg-gray-800 border border-gray-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                         </div>
+                         <div>
+                             <textarea rows="5" placeholder="Your Message" class="w-full bg-gray-800 border border-gray-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required></textarea>
+                         </div>
+                         <div class="text-center">
+                             <button id="submit-button" type="submit" class="px-10 py-3 rounded-full font-semibold bg-yellow-600 text-black hover:bg-yellow-500 transition-all duration-300 w-48">Send Message</button>
+                         </div>
+                     </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                 <a href="#" class="hover:text-yellow-500 transition-colors"><i data-lucide="instagram"></i></a>
+                 <a href="#" class="hover:text-yellow-500 transition-colors"><i data-lucide="facebook"></i></a>
+                 <a href="#" class="hover:text-yellow-500 transition-colors"><i data-lucide="twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Elena Moreau. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal HTML -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Enlarged gallery view">
+        </div>
+        <button id="lightbox-close" class="lightbox-btn lightbox-close"><i data-lucide="x"></i></button>
+        <button id="lightbox-prev" class="lightbox-btn lightbox-prev"><i data-lucide="chevron-left"></i></button>
+        <button id="lightbox-next" class="lightbox-btn lightbox-next"><i data-lucide="chevron-right"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,132 @@
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111111;
+            color: #E0E0E0;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Lora', serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(to top, rgba(17,17,17,1) 0%, rgba(17,17,17,0.7) 50%, rgba(17,17,17,0.3) 100%), url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #D4AF37; /* A subtle gold accent */
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .gallery-item-hover-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none; /* Make sure it doesn't block clicks */
+        }
+        .gallery-item:hover .gallery-item-hover-effect {
+            opacity: 1;
+        }
+        .filter-btn {
+            position: relative;
+            background-color: transparent;
+            color: #E0E0E0;
+            border: 1px solid #444;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #D4AF37;
+            color: #111;
+            border-color: #D4AF37;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Lightbox styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .lightbox.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 85vh;
+        }
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .lightbox-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            z-index: 1001;
+            border-radius: 50%;
+        }
+        .lightbox-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .lightbox-close { top: 2rem; right: 2rem; transform: none; padding: 0.8rem 1rem; }
+        .lightbox-prev { left: 2rem; }
+        .lightbox-next { right: 2rem; }
+
+        /* Gallery Item Animation */
+        .gallery-item {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .gallery-item.hide {
+            transform: scale(0.9);
+            opacity: 0;
+            width: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
